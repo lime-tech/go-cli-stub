@@ -1,0 +1,15 @@
+# -*- mode: sh, coding: utf-8 -*-
+cd "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/.."
+
+root="$(pwd)"
+
+if [ -z "$GOPATH" ]; then
+    echo 'You should specify GOPATH variable and add $GOPATH/bin to your PATH' 1>&2
+    exit 1
+fi
+
+go get $go_get_flags github.com/tools/godep
+go get $go_get_flags code.google.com/p/rog-go/exp/cmd/godef
+go get $go_get_flags github.com/nsf/gocode
+
+godep restore

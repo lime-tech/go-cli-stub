@@ -1,0 +1,21 @@
+{
+	"ImportPath": "golang-cli-stub",
+	"GoVersion": "go1.4.2",
+	"Deps": [
+		{
+			"ImportPath": "github.com/BurntSushi/toml",
+			"Comment": "v0.1.0-21-g056c9bc",
+			"Rev": "056c9bc7be7190eaa7715723883caffa5f8fa3e4"
+		},
+		{
+			"ImportPath": "github.com/Sirupsen/logrus",
+			"Comment": "v0.8.2-6-g0f2a495",
+			"Rev": "0f2a4955b11372eec5a4b95d907eaf8379b835d0"
+		},
+		{
+			"ImportPath": "github.com/codegangsta/cli",
+			"Comment": "1.2.0-111-g854c521",
+			"Rev": "854c52192c709766187afe5891a755bc97f82c38"
+		}
+	]
+}
