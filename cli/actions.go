@@ -4,12 +4,15 @@ import (
 	log "github.com/Sirupsen/logrus"
 	"github.com/codegangsta/cli"
 	"golang-cli-stub/config"
+	"os"
 )
 
 func dummyAction(c *cli.Context) {
 	_, err := config.FromFile(c.String("config"))
 	if err != nil {
-		panic(err)
+		log.Error(err)
+		defer os.Exit(1)
+		return
 	}
 
 	log.Info("Hello boilerplate")

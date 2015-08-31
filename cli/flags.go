@@ -17,5 +17,11 @@ var (
 			Usage: "log level(debug, info, warn, error, fatal, panic)",
 		},
 	}
-	dummyFlags = []cli.Flag{}
+	dummyFlags = []cli.Flag{
+		cli.StringFlag{
+			Name:  "config",
+			Value: "config.toml",
+			Usage: "path to configuration file in TOML firmat",
+		},
+	}
 )
