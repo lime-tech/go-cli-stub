@@ -1,7 +1,7 @@
 package main
 
 import (
-	"golang-cli-stub/cli"
+	"go-cli-stub/cli"
 )
 
 func main() { cli.Run() }

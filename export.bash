@@ -18,15 +18,18 @@ if [ -d "$target" ]; then
     exit 1
 fi
 
+root="$(git rev-parse --show-toplevel)"
 mkdir -p "$target"
-rsync -az "$root/" "$target"
+rsync \
+    --exclude="/export.bash" \
+    --exclude="/.git" \
+    -avz "$root/" "$target"
 
 cd "$target"
-rm -rf "$target/.git"
 
 module_base_name="$(basename "$module_name")"
 
-default_module_name='golang-cli-stub'
+default_module_name='go-cli-stub'
 
 replace() {
     echo "Templating strings in $1"
@@ -37,7 +40,7 @@ replace() {
     perl -p -i -e "s|<<module_base_name>>|$module_base_name|g"  "$1"
 }
 
-for x in "$target"/{README.md,main.go,scripts/{build,test}.bash,cli/cli.go} `ls -d "$target"/*/ | grep -vF /Godeps/`; do
+for x in "$target"/{README.md,main.go,common.mk} `ls -d "$target"/*/ | grep -vF /Godeps/`; do
     echo "Processing '$x'"
     if [ -d "$x" ]; then
         for xx in `find "$x" -type f -name '*.go'`; do

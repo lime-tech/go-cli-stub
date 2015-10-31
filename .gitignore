@@ -1,2 +1,5 @@
 *~
-main
+/main
+<<module_base_name>>
+<<module_base_name>>-*.tgz
+<<module_base_name>>-*/

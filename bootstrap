@@ -1,0 +1,25 @@
+# -*- mode: sh -*-
+
+main() {
+    local root
+    if [ -z "$root" ]; then
+        cd "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+        root="$(git rev-parse --show-toplevel)"
+    fi
+    cd "$root"
+
+    if [ -z "$GOPATH" ]; then
+        export GOPATH="$HOME/go"
+        export PATH="$PATH:$GOPATH/bin"
+        echo "WARN Falling back to default GOPATH $GOPATH" 1>&2
+    fi
+
+    go get $go_get_flags github.com/tools/godep
+    go get $go_get_flags code.google.com/p/rog-go/exp/cmd/godef
+    go get $go_get_flags github.com/nsf/gocode
+
+    godep restore
+    go install
+}
+
+main
