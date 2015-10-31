@@ -17,6 +17,7 @@ main() {
     go get $go_get_flags github.com/tools/godep
     go get $go_get_flags code.google.com/p/rog-go/exp/cmd/godef
     go get $go_get_flags github.com/nsf/gocode
+    go get $go_get_flags github.com/golang/lint/golint
 
     godep restore
     go install
