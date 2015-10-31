@@ -7,7 +7,7 @@
 ## Clone
 We assume that all your golang root located at `~/go` directory.
 ```bash
-git clone git-server:... go/src/go-irc-bot
+git clone git-server:... go/src/<<module_base_name>>
 ```
 
 ## How to build
