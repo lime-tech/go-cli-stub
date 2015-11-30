@@ -3,7 +3,7 @@ package cli
 import (
 	log "github.com/Sirupsen/logrus"
 	"github.com/codegangsta/cli"
-	"go-cli-stub/config"
+	"go-cli-stub/src/config"
 	"os"
 )
 

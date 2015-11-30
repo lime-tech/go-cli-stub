@@ -1,0 +1,13 @@
+[Unit]
+Description = <<description>>
+After = syslog.target network.target nss-lookup.target local-fs.target time-sync.target
+
+[Service]
+Type = simple
+User = go-cli-stub
+PIDFile = /run/go-cli-stub/go-cli-stub.pid
+Environment=TZ=UTC
+ExecStart=/usr/bin/go-cli-stub action --config /etc/go-cli-stub/config.toml
+
+[Install]
+WantedBy=multi-user.target
