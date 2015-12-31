@@ -1,5 +1,5 @@
 LDFLAGS = \
-	-X $(NAME)/cli.version=$(VERSION) \
+	-X $(NAME)/src/cli.version=$(VERSION) \
 	-B 0x$(shell head -c20 /dev/urandom|od -An -tx1|tr -d ' \n')
 
 all: $(NAME)
