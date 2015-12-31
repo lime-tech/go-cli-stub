@@ -16,7 +16,7 @@ BuildRequires: golang
 export GOPATH="$(pwd)"
 export PATH="$PATH:$(pwd)/bin"
 export root='src/'%{name}
-source "$root"/scripts/bootstrap
+source "$root"/bootstrap
 make %{name}
 %post
 %tmpfiles_create %{name}.conf
