@@ -42,7 +42,7 @@ exit 0
 %clean
 rm -rf $RPM_BUILD_ROOT
 %install
-install -m0755 -D            src/%{name}/main          $RPM_BUILD_ROOT%{_bindir}/%{name}
+install -m0755 -D            src/%{name}/%{name}       $RPM_BUILD_ROOT%{_bindir}/%{name}
 install -m0600 -D            src/%{name}/config.toml   $RPM_BUILD_ROOT%{_sysconfdir}/%{name}/config.toml
 install -m0644 -D -p         %{SOURCE1}                $RPM_BUILD_ROOT%{_unitdir}/%{name}.service
 install -m0644 -D -p         %{SOURCE2}                $RPM_BUILD_ROOT%{_tmpfilesdir}/%{name}.conf
