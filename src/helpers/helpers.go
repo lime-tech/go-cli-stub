@@ -1,11 +1,8 @@
 package helpers
 
 import (
-	"bytes"
-	"encoding/gob"
 	log "github.com/Sirupsen/logrus"
 	"os"
-	"reflect"
 	"runtime"
 )
 
